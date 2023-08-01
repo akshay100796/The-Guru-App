@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">The Guru</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="oops_forgot_password"><u>Oops, Forgot Password?</u></string>

@@ -1,9 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.LoginActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activities.login.LoginActivity">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/id_card_learning"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_70ssp"
+            android:background="@drawable/drf_splash_background"
+            app:cardBackgroundColor="@color/color_yellow_400"
+            app:cardCornerRadius="@dimen/_20ssp"
+            android:layout_margin="@dimen/_6ssp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/id_learnings_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/wrap_wrap"
+            android:text="@string/login"
+            android:textSize="@dimen/_30ssp"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_40ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="@string/email"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/id_edit_email"
+            style="@style/style_edit_match_wrap"
+            android:padding="@dimen/_10ssp"
+            android:hint="example@gmai.com"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/_14ssp"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_error_text_email"
+            style="@style/style_text_8"
+            android:text="@string/invalid_email_id"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:textColor="@color/color_error_red" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="Password"
+            android:textStyle="bold"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_6ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/id_input_password_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_edit_password"
+                style="@style/style_edit_match_wrap"
+                android:layout_height="match_parent"
+                android:background="@drawable/drf_edit_input_back"
+                android:inputType="textPassword"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="?android:colorPrimary"
+                android:padding="@dimen/_10ssp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_forgot_password"
+            style="@style/style_text_8"
+            android:text="@string/oops_forgot_password"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/_10ssp"
+            android:layout_gravity="end"
+            android:fontFamily="@font/font_prata"
+            android:textColor="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_blue_600"
+            android:text="@string/login"
+            android:fontFamily="@font/font_cinzel_800"
+            android:textColor="@color/color_yellow_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="@string/new_here"
+            android:textStyle="bold"
+            android:layout_marginEnd="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_6ssp"
+            android:layout_gravity="end"
+            android:textColor="@color/color_blue_600" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -22,6 +22,9 @@ object AppConstants {
     object Preferences {
         const val PREF_NAME = "pref_the_guru"
         const val TOKEN = "token"
+    }
 
+    object LINKS {
+        const val LEARNINGS = "https://raw.githubusercontent.com/akshay100796/The-Guru-App-Notes/main/text/learnings.json"
     }
 }

@@ -6,9 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.codexdroid.theguru.R
-import com.codexdroid.theguru.ui.activities.LoginActivity
+import com.codexdroid.theguru.ui.activities.login.LoginActivity
 import com.codexdroid.theguru.ui.activities.home.HomeActivity
-import com.codexdroid.theguru.ui.activities.registration.RegisterActivity
 import com.codexdroid.theguru.utility.PrefManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

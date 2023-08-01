@@ -109,7 +109,9 @@ dependencies {
     //Other Fascinating
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("com.github.bumptech.glide:glide:4.13.2")
+
     implementation("com.intuit.ssp:ssp-android:1.1.0")
+
     implementation("com.vanniktech:android-image-cropper:4.5.0")
     implementation("com.jsibbold:zoomage:1.3.1")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")

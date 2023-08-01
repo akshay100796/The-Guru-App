@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drf_splash_background"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_quote"
+            style="@style/style_text_8"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/_12ssp"
+            android:text="Sample Learning Text this could be long text so you can understand learning and other"
+            android:maxLines="2"
+            android:fontFamily="@font/font_cinzel_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_author"
+            style="@style/style_text_8"
+            android:text="Author"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_10ssp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

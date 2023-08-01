@@ -8,4 +8,6 @@
     <color name="color_blue_600">#2F288F</color>
     <color name="color_gray_200">#F5F5F5</color>
 
+    <color name="color_error_red">#FF0000</color>
+
 </resources>
