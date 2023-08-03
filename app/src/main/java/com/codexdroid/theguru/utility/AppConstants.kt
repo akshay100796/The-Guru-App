@@ -27,4 +27,17 @@ object AppConstants {
     object LINKS {
         const val LEARNINGS = "https://raw.githubusercontent.com/akshay100796/The-Guru-App-Notes/main/text/learnings.json"
     }
+
+    object Errors {
+        const val EMAIL = "email"
+        const val PASSWORD = "password"
+    }
+
+    object Firestore {
+        const val COLLECTION_LOGINS = "logins"
+        const val COLLECTION_USERS = "users"
+
+        const val LOGIN_ADMIN_EMAIL = "email"
+        const val LOGIN_ADMIIN_PASSWORD = "password"
+    }
 }

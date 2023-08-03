@@ -5,28 +5,26 @@
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".ui.activities.login.LoginActivity">
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:id="@+id/id_card_learning"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_70ssp"
-            android:background="@drawable/drf_splash_background"
-            app:cardBackgroundColor="@color/color_yellow_400"
-            app:cardCornerRadius="@dimen/_20ssp"
-            android:layout_margin="@dimen/_6ssp"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            android:layout_height="@dimen/_45ssp"
+            app:cardElevation="1sp"
+            android:layout_margin="@dimen/_10ssp"
+            app:cardCornerRadius="@dimen/_10ssp"
+            >
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/id_learnings_viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
+
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/wrap_wrap"
@@ -40,20 +38,28 @@
             style="@style/style_text_10"
             android:text="@string/email"
             android:textStyle="bold"
-            android:textSize="@dimen/_12ssp"
             android:textColor="@color/color_blue_600"
             android:layout_marginStart="@dimen/_10ssp"
             android:layout_marginTop="@dimen/_10ssp" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/id_edit_email"
-            style="@style/style_edit_match_wrap"
-            android:padding="@dimen/_10ssp"
-            android:hint="example@gmai.com"
-            android:inputType="textEmailAddress"
-            android:textSize="@dimen/_14ssp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/id_input_email_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10ssp"
-            android:layout_marginEnd="@dimen/_10ssp" />
+            android:layout_marginEnd="@dimen/_10ssp"
+            app:hintEnabled="false"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_edit_email"
+                style="@style/style_edit_match_wrap"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:hint="@string/hint_email"
+                android:background="@drawable/drf_edit_input_back" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/id_error_text_email"
@@ -65,39 +71,46 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/style_text_10"
-            android:text="Password"
+            android:text="@string/password"
             android:textStyle="bold"
-            android:textSize="@dimen/_12ssp"
             android:textColor="@color/color_blue_600"
             android:layout_marginStart="@dimen/_10ssp"
-            android:layout_marginTop="@dimen/_6ssp" />
+            android:layout_marginTop="@dimen/_10ssp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/id_input_password_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
+            app:hintEnabled="false"
             android:layout_marginStart="@dimen/_10ssp"
             android:layout_marginEnd="@dimen/_10ssp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/id_edit_password"
                 style="@style/style_edit_match_wrap"
                 android:layout_height="match_parent"
+                android:textSize="@dimen/_10ssp"
+                android:padding="@dimen/_6ssp"
                 android:background="@drawable/drf_edit_input_back"
-                android:inputType="textPassword"
-                android:textSize="@dimen/_14ssp"
-                android:textColor="?android:colorPrimary"
-                android:padding="@dimen/_10ssp" />
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_error_text_password"
+            style="@style/style_text_8"
+            android:text="@string/apologized_invalid_password"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:textColor="@color/color_error_red" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/id_text_forgot_password"
             style="@style/style_text_8"
             android:text="@string/oops_forgot_password"
-            android:textStyle="bold"
             android:layout_margin="@dimen/_10ssp"
             android:layout_gravity="end"
             android:fontFamily="@font/font_prata"
@@ -106,6 +119,7 @@
             android:layout_marginTop="@dimen/_10ssp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_button_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/color_blue_600"
@@ -116,15 +130,17 @@
             android:layout_marginTop="@dimen/_10ssp"
             android:layout_marginEnd="@dimen/_10ssp" />
 
-
         <androidx.appcompat.widget.AppCompatTextView
-            style="@style/style_text_10"
+            android:id="@+id/id_text_new_user"
+            style="@style/style_text_8"
             android:text="@string/new_here"
-            android:textStyle="bold"
             android:layout_marginEnd="@dimen/_10ssp"
             android:layout_marginTop="@dimen/_6ssp"
             android:layout_gravity="end"
             android:textColor="@color/color_blue_600" />
+
+
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

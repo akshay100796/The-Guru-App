@@ -5,4 +5,11 @@
     <string name="oops_forgot_password"><u>Oops, Forgot Password?</u></string>
     <string name="new_here"><u>New Here?</u></string>
     <string name="invalid_email_id">Invalid email id</string>
+    <string name="password">Password</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_pass_desc">We Automatically created Password for you, Do you want to get it on email id?\n\n%s</string>
+    <string name="yes_mail_me">Yes, Mail Me</string>
+    <string name="no_cancel">No, Cancel</string>
+    <string name="apologized_invalid_password">Apologized, Invalid Password</string>
 </resources>

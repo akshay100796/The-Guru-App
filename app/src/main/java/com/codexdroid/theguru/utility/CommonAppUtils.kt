@@ -19,6 +19,8 @@ import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.Locale
+import kotlin.random.Random
+import kotlin.random.nextInt
 
 /**
  * Copyright (C) [The-Guru] - All Rights Reserved
@@ -36,6 +38,19 @@ fun CharSequence?.isValidEmail() = !isNullOrEmpty() && Patterns.EMAIL_ADDRESS.ma
 fun CharSequence?.isValidMobile(): Boolean {
     if (this?.length != 10) return false
     return  "^\\+?(91|0)?[7-9]\\d{9}$".toRegex().matches(this.toString())
+}
+
+fun CharSequence?.isValidPassword(): Boolean {
+    var hasLowerCase = false
+    var hasUpperCase = false
+    var hasDigit = false
+
+    this?.forEach {
+        if (it in 'a'..'z') hasLowerCase = true
+        if(it in 'A'..'Z') hasUpperCase = true
+        if (it in '0'..'p') hasDigit = true
+    }
+    return hasLowerCase && hasUpperCase && hasDigit
 }
 
 fun showToast(context: Context, message: String, duration : Int = Toast.LENGTH_LONG) {
@@ -75,4 +90,25 @@ fun requestShowImageInGlide(resources: Resources, imageView: AppCompatImageView,
         .error(ResourcesCompat.getDrawable(resources, R.drawable.ic_black_emoji_sad,null))
         .placeholder(ResourcesCompat.getDrawable(resources,R.drawable.drf_anim_loading,null))
         .into(imageView)
+}
+
+fun requestGeneratePassword(): String {
+
+    val password = StringBuilder()
+
+    repeat(2) {
+        val randomCapitalChar = Random.nextInt(65..90).toChar()
+        password.append(randomCapitalChar)
+
+        val randomSmallChar = Random.nextInt(97..122).toChar()
+        password.append(randomSmallChar)
+
+        val randomNumber = Random.nextInt(48..57).toChar().code
+        password.append(randomNumber)
+
+        val randomSymbol = Random.nextInt(33..47).toChar()
+        password.append(randomSymbol)
+    }
+    password.toString().toCharArray().shuffle()
+    return password.toString()
 }

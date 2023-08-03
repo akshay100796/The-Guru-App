@@ -9,12 +9,12 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/id_text_quote"
-            style="@style/style_text_8"
+            style="@style/style_text_10"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="@dimen/_12ssp"
             android:text="Sample Learning Text this could be long text so you can understand learning and other"
             android:maxLines="2"
+            android:textSize="@dimen/_12ssp"
             android:fontFamily="@font/font_cinzel_600"
             android:layout_marginStart="@dimen/_10ssp"
             android:layout_marginTop="@dimen/_10ssp"
@@ -24,8 +24,9 @@
             android:id="@+id/id_text_author"
             style="@style/style_text_8"
             android:text="Author"
-            android:layout_gravity="end"
-            android:layout_margin="@dimen/_10ssp"/>
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_2ssp"
+            />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
