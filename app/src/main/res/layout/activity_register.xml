@@ -1,9 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activities.registration.RegisterActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".ui.activities.login.LoginActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/id_card_learning"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45ssp"
+            app:cardElevation="1sp"
+            android:layout_margin="@dimen/_10ssp"
+            app:cardCornerRadius="@dimen/_10ssp">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/id_learnings_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/wrap_wrap"
+            android:text="@string/register_as"
+            android:textSize="@dimen/_30ssp"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_30ssp" />
+
+        <RadioGroup
+            android:id="@+id/id_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30ssp"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/id_chip_member"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/drf_chip_selector"
+                android:button="@color/transparent"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/member"
+                android:layout_weight="1"
+                android:fontFamily="@font/font_prata"
+                android:textColor="@drawable/drf_chip_text"
+                android:textSize="@dimen/_10ssp" />
+
+            <RadioButton
+                android:id="@+id/id_chip_admin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_6ssp"
+                android:background="@drawable/drf_chip_selector"
+                android:button="@color/transparent"
+                android:gravity="center"
+                android:text="@string/admin"
+                android:layout_weight="1"
+                android:fontFamily="@font/font_prata"
+                android:textColor="@drawable/drf_chip_text"
+                android:textSize="@dimen/_10ssp" />
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_chip_desc"
+            style="@style/style_text_8"
+            android:layout_gravity="center"
+            android:text="@string/member_select_desc"
+            android:fontFamily="@font/font_cinzel_400"
+            android:textColor="@color/color_blue_600"
+            android:layout_margin="@dimen/_4ssp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="@string/full_name"
+            android:textStyle="bold"
+            android:textColor="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_6ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            app:hintEnabled="false"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_edit_full_name"
+                style="@style/style_edit_match_wrap"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:inputType="textPersonName"
+                android:background="@drawable/drf_edit_input_back" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="@string/email"
+            android:textStyle="bold"
+            android:textColor="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_6ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            app:hintEnabled="false"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_edit_email"
+                style="@style/style_edit_match_wrap"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/drf_edit_input_back" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_error_text_email"
+            style="@style/style_text_8"
+            android:visibility="gone"
+            android:text="@string/invalid_email_id"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:textColor="@color/color_error_red" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="@string/whats_app_number"
+            android:textStyle="bold"
+            android:textColor="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_6ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            app:hintEnabled="false"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_edit_whatsApp"
+                style="@style/style_edit_match_wrap"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_8ssp"
+                android:inputType="number"
+                android:maxLength="10"
+                android:background="@drawable/drf_edit_input_back" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_error_text_whats_app"
+            style="@style/style_text_8"
+            android:visibility="gone"
+            android:text="@string/error_text_invalid_mobile"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:textColor="@color/color_error_red" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="@string/password"
+            android:textStyle="bold"
+            android:textColor="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_6ssp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/id_input_password_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            app:hintEnabled="false"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/id_edit_password"
+                style="@style/style_edit_match_wrap"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/_10ssp"
+                android:padding="@dimen/_6ssp"
+                android:background="@drawable/drf_edit_input_back"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_error_text_password"
+            style="@style/style_text_8"
+            android:text="@string/apologized_invalid_password"
+            android:visibility="gone"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:textColor="@color/color_error_red" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_6ssp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/style_text_10"
+                android:layout_gravity="center"
+                android:text="@string/auto_generate_password_amp_mail_me"
+                android:textColor="@color/color_blue_600" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/id_button_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/drf_switch_selector"
+                android:checked="false"
+                android:thumb="@null"
+                app:track="@null"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:animateLayoutChanges="true"
+                android:background="@android:color/transparent" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_button_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_blue_600"
+            android:text="@string/register"
+            android:fontFamily="@font/font_cinzel_800"
+            android:textColor="@color/color_yellow_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

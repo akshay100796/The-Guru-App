@@ -22,6 +22,8 @@ object AppConstants {
     object Preferences {
         const val PREF_NAME = "pref_the_guru"
         const val TOKEN = "token"
+        const val TEMP_TOKEN = "Token 25hTABeb5DU"
+        const val DATABASE_NAME = "TG_Database"
     }
 
     object LINKS {
@@ -31,6 +33,8 @@ object AppConstants {
     object Errors {
         const val EMAIL = "email"
         const val PASSWORD = "password"
+        const val NAME = "name"
+        const val WHATS_APP = "whats-app"
     }
 
     object Firestore {
@@ -38,6 +42,6 @@ object AppConstants {
         const val COLLECTION_USERS = "users"
 
         const val LOGIN_ADMIN_EMAIL = "email"
-        const val LOGIN_ADMIIN_PASSWORD = "password"
+        const val LOGIN_ADMIN_PASSWORD = "password"
     }
 }

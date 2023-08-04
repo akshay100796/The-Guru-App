@@ -1,12 +1,9 @@
 package com.codexdroid.theguru.ui.activities.login
 
 import android.content.Intent
-import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.datastore.preferences.preferencesDataStore
 import com.codexdroid.theguru.R
 import com.codexdroid.theguru.controllers.adapters.GuruLearningsAdapter
 import com.codexdroid.theguru.controllers.data_models.local.Learnings
@@ -19,8 +16,6 @@ import com.codexdroid.theguru.utility.isValidEmail
 import com.codexdroid.theguru.utility.isValidPassword
 import com.codexdroid.theguru.utility.requestGeneratePassword
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,7 +30,6 @@ import java.util.TimerTask
  * Created by Akshay Pawar on © 01 Aug 2023, 10:46 PM
  * MH-15, India
  */
-
 
 /**
  * Links for Future Ref.
@@ -54,23 +48,27 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
 
     private val registerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private val onBackPress: OnBackPressedCallback = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
 
-        letsSetUpListeners()
-        letsSetUpObservers()
+//            MaterialAlertDialogBuilder(this@HomeActivity)
+//                .setTitle(getString(R.string.app_exit_title,getString(R.string.app_name)))
+//                .setMessage(getString(R.string.app_exit_desc,getString(R.string.app_name)))
+//                .setPositiveButton(getString(R.string.yes_pls)) { _, _ -> finishAffinity() }
+//                .setNegativeButton(getString(R.string.no_i_don_t)){ dialog, _ -> dialog.dismiss() }
+//                .create().show()
+        }
     }
 
-    override fun onLoad() {
-        super.onLoad()
+    override fun requestInitialised() {
+        super.requestInitialised()
         /**Load Local Data **/
-        letsInitialized()
-    }
-    private fun letsInitialized() {
-        setAdsAdapter()
+        onBackPressedDispatcher.addCallback(onBackPress)
+        requestShowLearningsAdapter()
     }
 
-    private fun letsSetUpListeners() {
+    override fun requestSetUpListeners() {
+        super.requestSetUpListeners()
 
         binding.idTextForgotPassword.setOnClickListener {
 
@@ -100,19 +98,19 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
 
             /***
             Firebase.firestore.collection(AppConstants.Firestore.COLLECTION_LOGINS)
-                .get()
-                .addOnSuccessListener { result ->
-                    result.forEach {
-                        val map = it.data as HashMap<String, Any>
-                        val email = map[AppConstants.Firestore.LOGIN_ADMIN_EMAIL].toString()
-                        val password = map[AppConstants.Firestore.LOGIN_ADMIIN_PASSWORD].toString()
+            .get()
+            .addOnSuccessListener { result ->
+            result.forEach {
+            val map = it.data as HashMap<String, Any>
+            val email = map[AppConstants.Firestore.LOGIN_ADMIN_EMAIL].toString()
+            val password = map[AppConstants.Firestore.LOGIN_ADMIN_PASSWORD].toString()
 
-                        Log.d("AXE","Email: $email  ||  Password: $password")
-                    }
-                }
-            **/
+            Log.d("AXE","Email: $email  ||  Password: $password")
+            }
+            }
+             **/
 
-            requestPreferenceManager().saveToken("Token 25hTABeb5DU")
+            requestPreferenceManager().saveToken(AppConstants.Preferences.TEMP_TOKEN)
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
@@ -124,8 +122,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
         }
     }
 
-    private fun letsSetUpObservers() {
-
+    override fun requestSetUpObserver() {
+        super.requestSetUpObserver()
         viewModel.errorType.observe(this) {
 
             binding.idErrorTextEmail.text = it.second
@@ -136,7 +134,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
         }
     }
 
-    private fun setAdsAdapter() {
+    private fun requestShowLearningsAdapter() {
         val learnings = listOf (
             Learnings("Assurance in being","Guru Learnings"),
             Learnings("Follow the path of heart","Guru Learnings"),

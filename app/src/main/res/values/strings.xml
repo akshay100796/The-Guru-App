@@ -12,4 +12,23 @@
     <string name="yes_mail_me">Yes, Mail Me</string>
     <string name="no_cancel">No, Cancel</string>
     <string name="apologized_invalid_password">Apologized, Invalid Password</string>
+    <string name="member">Member</string>
+    <string name="admin">Admin</string>
+    <string name="member_select_desc">member joins the satsanga on time, and happy to have seva</string>
+    <string name="admin_select_desc">Admin Can create Satsanga Events and Stays Happy</string>
+    <string name="full_name">Full Name</string>
+    <string name="only_alphabets_space">abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="whats_app_number">Whats-App Number</string>
+    <string name="error_text_invalid_mobile">Invalid Mobile or WhatsApp Number</string>
+    <string name="register">Register</string>
+    <string name="auto_generate_password_amp_mail_me"><![CDATA[Auto Generate Password & Mail Me]]></string>
+    <string name="register_as">Register As,</string>
+    <string name="confirm">Confirm?</string>
+    <string name="message_alert_cancel_registration">Do you want to cancel Registration Process?</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_no">No</string>
+    <string name="error_text_name_required">Apologized, Name required</string>
+    <string name="error_text_invalid_email">Apologized, Invalid Email Given</string>
+    <string name="error_text_invaild_mobile">Apologized, Mobile No is invalid</string>
+    <string name="error_text_invalid_password">Password too short or left blank</string>
 </resources>
