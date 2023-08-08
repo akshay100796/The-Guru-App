@@ -1,16 +1,17 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id ("kotlin-kapt")
+    id ("org.jetbrains.kotlin.kapt")
+    id("kotlin-android")
+    id("org.jetbrains.kotlin.android")
     id ("androidx.navigation.safeargs")
     id ("dagger.hilt.android.plugin")
     id ("com.google.dagger.hilt.android")
     id ("com.google.gms.google-services")
     id ("com.google.firebase.crashlytics")
-//    kotlin("kapt") version "1.9.0"
 }
 
-android {
+android (configure= {
     namespace = "com.codexdroid.theguru"
     compileSdk = 33
 
@@ -22,18 +23,25 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled = true
         setProperty("archivesBaseName", "Thr_Guru_${android.defaultConfig.versionName}")
+
+        //for room Configuring Compiler Options
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += listOf("room.schemaLocation" to "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -57,9 +65,8 @@ android {
         abortOnError = false
         checkReleaseBuilds = true
     }
+})
 
-
-}
 
 dependencies {
 
@@ -121,8 +128,14 @@ dependencies {
     implementation("com.facebook.shimmer:shimmer:0.5.0")
 
     //Room Database //By Changing Version will may cause to compiler error
-    kotlin("kapt","androidx.room:room-compiler:2.5.1")
-    implementation("androidx.room:room-ktx:2.5.1")
-    testImplementation("androidx.room:room-testing:2.5.1")
+    //kotlin("kapt","androidx.room:room-compiler:2.5.1")
+    //kotlin("kapt","androidx.room:room-compiler:2.5.1")
+    kapt ("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+    testImplementation("androidx.room:room-testing:2.5.2")
 
+}
+
+kapt {
+    correctErrorTypes=  true
 }

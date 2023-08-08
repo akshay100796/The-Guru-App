@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/color_yellow_400"
+        app:cardCornerRadius="@dimen/_10ssp"
+        android:layout_marginStart="@dimen/_6ssp"
+        android:layout_marginEnd="@dimen/_6ssp"
+        android:layout_marginTop="@dimen/_6ssp"
+        app:strokeWidth="0dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6ssp">
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/id_check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_marginStart="@dimen/_4ssp"
+                android:button="@drawable/drf_checkbox_selector" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_seva"
+                style="@style/style_text_10"
+                android:layout_gravity="center_vertical"
+                android:text="Satsanga Seva text will appear here next line also should prepare well"
+                android:layout_marginEnd="@dimen/_8ssp"
+                android:textColor="@color/color_blue_600" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.codexdroid.theguru.di.room.TGViewModel
+import com.codexdroid.theguru.di.room.TGViewModelFactory
 import com.codexdroid.theguru.utility.PrefManager
 import com.google.firebase.auth.FirebaseAuth
 import java.lang.reflect.ParameterizedType
@@ -37,7 +38,7 @@ abstract class BaseActivity<viewBinding: ViewBinding, viewModel: ViewModel>: App
 
     private val _prefManager by lazy { PrefManager(this) }
     private val firebaseAuthentication by lazy { FirebaseAuth.getInstance() }
-    private val _tgViewModel by viewModels<TGViewModel>()
+    private val _tgViewModel : TGViewModel by viewModels { TGViewModelFactory(application) }
     private val baseViewModel : BaseFragmentViewModel by viewModels { BaseViewModelFactory(application) }
 
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/id_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_4ssp"
+        android:layout_margin="@dimen/_6ssp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/id_icon"
+            android:layout_width="@dimen/_16ssp"
+            android:layout_height="@dimen/_16ssp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_black_filled_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_menu"
+            style="@style/style_text_8"
+            android:text="Past Events"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

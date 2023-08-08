@@ -37,7 +37,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
     private val viewModel by lazy { requestViewModel() }
     private val tgViewModel by lazy { requestRoomViewModel() }
 
-    private lateinit var registerAs: String
+    private var registerAs: String = AppConstants.UserType.MEMBER
     private lateinit var fullName: String
     private lateinit var email: String
     private lateinit var whatsApp: String
@@ -69,10 +69,12 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
         binding.idRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.id_chip_member -> {
-                    viewModel.requestUpdateRegisterAs(Pair(getString(R.string.member), getString(R.string.member_select_desc)))
+                    registerAs = AppConstants.UserType.MEMBER
+                    viewModel.requestUpdateRegisterAs(Pair(registerAs, getString(R.string.member_select_desc)))
                 }
                 R.id.id_chip_admin -> {
-                    viewModel.requestUpdateRegisterAs(Pair(getString(R.string.admin), getString(R.string.admin_select_desc)))
+                    registerAs = AppConstants.UserType.ADMIN
+                    viewModel.requestUpdateRegisterAs(Pair(registerAs, getString(R.string.admin_select_desc)))
                 }
                 else -> {}
             }

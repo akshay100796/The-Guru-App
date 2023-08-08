@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/id_fragment_home">
+
+    <fragment
+        android:id="@+id/id_fragment_home"
+        android:name="com.codexdroid.theguru.ui.fragments.home.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/id_fragment_past_events"
+        android:name="com.codexdroid.theguru.ui.fragments.past_events.PastEventsFragment"
+        tools:layout="@layout/fragment_past_events" />
+
+    <fragment
+        android:id="@+id/id_fragment_profile"
+        android:name="com.codexdroid.theguru.ui.fragments.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

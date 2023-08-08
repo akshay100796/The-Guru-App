@@ -15,6 +15,7 @@ object AppConstants {
         const val DD_MM_YYYY = "dd-MM-yyyy"
         const val DD_MMMM_YYYY = "dd MMMM yyyy"
         const val DD_MM_YYYY_HH_MM_A = "dd-MMM-yy hh:mm a"
+        const val HH_MM_SS = "hh:mm:ss"
         const val YYYY = "yyyy"
         const val MM = "MM"
         const val DD = "dd"
@@ -30,6 +31,12 @@ object AppConstants {
         const val LEARNINGS = "https://raw.githubusercontent.com/akshay100796/The-Guru-App-Notes/main/text/learnings.json"
     }
 
+
+    object HomeMenus {
+        const val MENU_HOME = "menu_home"
+        const val MENU_PAST_EVENTS = "menu_past_events"
+        const val MENU_PROFILE = "menu_profile"
+    }
     object Errors {
         const val EMAIL = "email"
         const val PASSWORD = "password"
@@ -43,5 +50,10 @@ object AppConstants {
 
         const val LOGIN_ADMIN_EMAIL = "email"
         const val LOGIN_ADMIN_PASSWORD = "password"
+    }
+
+    object UserType {
+        const val MEMBER = "Member"
+        const val ADMIN = "Admin"
     }
 }

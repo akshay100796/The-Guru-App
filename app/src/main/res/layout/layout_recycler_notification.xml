@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/color_gray_200"
+        app:cardCornerRadius="@dimen/_14ssp"
+        app:strokeWidth="0dp"
+        android:layout_marginStart="@dimen/_6ssp"
+        android:layout_marginTop="@dimen/_6ssp"
+        android:layout_marginEnd="@dimen/_6ssp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_8ssp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_event_name"
+                style="@style/style_text_10"
+                android:text="New Event, {Event Name}"
+                android:fontFamily="@font/font_cinzel_800"
+                android:textColor="@color/color_blue_600" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_1"
+                style="@style/style_text_10"
+                android:layout_marginTop="@dimen/_2ssp"
+                android:text="Date: 15 June 2023, 05:45 PM"
+                android:textColor="@color/color_blue_600" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_2"
+                style="@style/style_text_10"
+                android:layout_marginTop="@dimen/_2ssp"
+                android:text="Locaiton: Shankarachaya Hall Nashik"
+                android:textColor="@color/color_blue_600" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_button_view"
+                style="@style/style_text_10"
+                android:text="VIEW"
+                android:layout_marginTop="@dimen/_2ssp"
+                android:fontFamily="@font/font_cinzel_800"
+                android:layout_gravity="end"
+                android:textColor="@color/color_blue_600" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

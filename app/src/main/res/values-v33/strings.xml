@@ -30,4 +30,13 @@
     <string name="error_text_invalid_email">Apologized, Invalid Email Given</string>
     <string name="error_text_invaild_mobile">Apologized, Mobile No is invalid</string>
     <string name="error_text_invalid_password">Password too short or left blank</string>
+    <string name="home">Home</string>
+    <string name="past_events">Past Events</string>
+    <string name="profile">Profile</string>
+    <string name="upcoming_satsangs_in">Upcoming Satsangs in...</string>
+    <string name="s_text">%s Sec</string>
+    <string name="upcoming_event_in">Upcoming Event in,</string>
+    <string name="schedules">Schedules</string>
+    <string name="your_seva">Your Seva</string>
+    <string name="available">Available</string>
 </resources>

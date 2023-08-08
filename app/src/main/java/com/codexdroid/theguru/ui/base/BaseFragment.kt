@@ -9,7 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import com.codexdroid.theguru.di.room.TGViewModel
+import com.codexdroid.theguru.di.room.TGViewModelFactory
 import com.codexdroid.theguru.utility.PrefManager
+import com.google.firebase.auth.FirebaseAuth
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -34,14 +37,26 @@ abstract class BaseFragment<viewBinding: ViewBinding, viewModel: ViewModel>: Fra
     @Suppress("UNCHECKED_CAST")
     private val _viewBinding by lazy { inflateMethod.invoke(null,layoutInflater) as viewBinding }
 
+    private val firebaseAuthentication by lazy { FirebaseAuth.getInstance() }
+    private val roomViewModel : TGViewModel by viewModels { TGViewModelFactory(requireActivity().application) }
     private val prefManager by lazy { PrefManager(requireContext()) }
-    private val baseViewModel : BaseFragmentViewModel by viewModels { BaseViewModelFactory(requireActivity().application) }
+    private val fragmentViewModel : BaseFragmentViewModel by viewModels { BaseViewModelFactory(requireActivity().application) }
 
     open fun requestBinding() = _viewBinding
     open fun requestViewModel() = _viewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        requestInitialised()
+        requestSetUpListeners()
+        requestSetUpObserver()
+
         return _viewBinding.root
     }
+
+
+    open fun requestInitialised() {}
+    open fun requestSetUpListeners() {}
+    open fun requestSetUpObserver() {}
 
 }

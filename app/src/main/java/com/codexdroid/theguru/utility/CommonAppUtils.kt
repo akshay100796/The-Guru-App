@@ -70,6 +70,8 @@ fun requestDateOfMonth(time: Long?) : Int = SimpleDateFormat(AppConstants.DateFo
 fun getDate(time: Long?): String = SimpleDateFormat(AppConstants.DateFormats.DD_MM_YYYY, Locale.getDefault()).format(time)
 fun requestBirthDate(time: Long?) : String = SimpleDateFormat(AppConstants.DateFormats.DD_MMMM_YYYY, Locale.getDefault()).format(time)
 fun requestCompleteDateTime(time: Long?) : String = SimpleDateFormat(AppConstants.DateFormats.DD_MM_YYYY_HH_MM_A, Locale.getDefault()).format(time)
+fun requestTimeInHourMinSec(time: Long?): String = SimpleDateFormat(AppConstants.DateFormats.HH_MM_SS, Locale.getDefault()).format(time)
+
 fun requestAge(time: Long?) : String {
     LocalDate.of(requestYear(time), requestMonth(time), requestDateOfMonth(time)).apply {
         return "${LocalDate.now().year - year} year old"
