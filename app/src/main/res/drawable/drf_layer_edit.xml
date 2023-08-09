@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/ic_black_outline_circle" />
+    <item android:drawable="@drawable/ic_black_outline_edit"
+        android:start="@dimen/_10ssp"
+        android:top="@dimen/_10ssp"
+        android:end="@dimen/_10ssp"
+        android:bottom="@dimen/_10ssp"
+        />
+</layer-list>

@@ -6,7 +6,8 @@
         android:id="@+id/id_card_event"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="@dimen/_4ssp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
         android:layout_marginStart="@dimen/_4ssp"
         android:layout_marginTop="@dimen/_6ssp"
         android:layout_marginEnd="@dimen/_4ssp"
@@ -15,7 +16,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/drf_splash_background"
+            android:background="@drawable/drf_gradient_yellow"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView

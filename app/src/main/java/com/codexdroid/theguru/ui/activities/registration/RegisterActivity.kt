@@ -98,7 +98,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding, RegisterViewModel
             if (isInvalidEmail) return@setOnClickListener
 
             val isInvalidWhatsApp = !whatsApp.isValidMobile()
-            viewModel.requestShowError(AppConstants.Errors.WHATS_APP, if(isInvalidWhatsApp) getString(R.string.error_text_invaild_mobile) else "")
+            viewModel.requestShowError(AppConstants.Errors.WHATS_APP, if(isInvalidWhatsApp) getString(R.string.error_text_apologized_invalid_mobile) else "")
             if(isInvalidWhatsApp) return@setOnClickListener
 
             val isInvalidPassword = password.isEmpty() || password.length < 5

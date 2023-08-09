@@ -29,9 +29,9 @@
     <string name="text_no">No</string>
     <string name="error_text_name_required">Apologized, Name required</string>
     <string name="error_text_invalid_email">Apologized, Invalid Email Given</string>
-    <string name="error_text_invaild_mobile">Apologized, Mobile No is invalid</string>
+    <string name="error_text_apologized_invalid_mobile">Apologized, Mobile No is invalid</string>
     <string name="error_text_invalid_password">Password too short or left blank</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="past_events">Past Events</string>
@@ -42,4 +42,9 @@
     <string name="schedules">Schedules</string>
     <string name="your_seva">Your Seva</string>
     <string name="available">Available</string>
+    <string name="not_possible">Not Possible</string>
+    <string name="not_sure">Not Sure</string>
+    <string name="update_seva">Update Seva</string>
+    <string name="seva_description">Seva Description</string>
+    <string name="mobile">Mobile</string>
 </resources>

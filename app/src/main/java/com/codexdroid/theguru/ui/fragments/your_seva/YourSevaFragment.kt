@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.codexdroid.theguru.R
 import com.codexdroid.theguru.controllers.adapters.YourSevaAdapter
+import com.codexdroid.theguru.controllers.interfaces.RecyclerItemClickListener
 import com.codexdroid.theguru.databinding.FragmentYourSevaBinding
 import com.codexdroid.theguru.ui.base.BaseFragment
+import com.codexdroid.theguru.ui.fragments.update_seva.UpdateSevaBottomSheetFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -39,7 +41,14 @@ class YourSevaFragment : BaseFragment<FragmentYourSevaBinding, YourSevaViewModel
     private fun requestShowYourSeva() {
         YourSevaAdapter().apply {
             requestBinding().idRecyclerYouSeva.adapter = this
+
+            requestOnRecyclerClicked(object : RecyclerItemClickListener{
+                override fun onRecyclerItemClicked(position: Int, data: Any?, extra: String?) {
+                    if(extra == "1") {
+                        UpdateSevaBottomSheetFragment().show(childFragmentManager,"-")
+                    }
+                }
+            })
         }
     }
-
 }

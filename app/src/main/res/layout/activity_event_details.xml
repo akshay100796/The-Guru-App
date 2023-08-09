@@ -1,403 +1,371 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.activities.events_details.EventDetailsActivity"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".ui.activities.events_details.EventDetailsActivity">
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/style_text_10"
+        android:layout_margin="@dimen/_8ssp"
+        android:text="@string/upcoming_event_in"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/id_image_notification"
+        app:layout_constraintTop_toTopOf="@id/id_image_notification" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/id_image_notification"
+        android:layout_width="@dimen/_30ssp"
+        android:layout_height="@dimen/_30ssp"
+        android:layout_margin="@dimen/_10ssp"
+        android:elevation="@dimen/_4ssp"
+        android:src="@drawable/ic_black_filled_notification"
+        android:tint="@color/color_yellow_400"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/id_text_countdown_timer"
+        style="@style/style_text_10"
+        android:textSize="@dimen/_25ssp"
+        android:text="08:45:47 SEC"
+        android:textColor="@color/color_blue_600"
+        android:fontFamily="@font/font_cinzel_800"
+        android:layout_marginStart="@dimen/_8ssp"
+        app:layout_constraintTop_toBottomOf="@id/id_image_notification"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/id_card_events_details"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        app:cardCornerRadius="@dimen/_10ssp"
+        android:layout_margin="@dimen/_8ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_text_countdown_timer">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/style_text_10"
-                android:layout_margin="@dimen/_8ssp"
-                android:text="@string/upcoming_event_in"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="@+id/id_image_notification"
-                app:layout_constraintTop_toTopOf="@id/id_image_notification" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/id_image_notification"
-                android:layout_width="@dimen/_30ssp"
-                android:layout_height="@dimen/_30ssp"
-                android:layout_margin="@dimen/_10ssp"
-                android:src="@drawable/ic_black_filled_notification"
-                android:tint="@color/color_yellow_400"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/drf_gradient_yellow"
+            android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/id_card_timer"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_70ssp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp"
-                android:layout_margin="@dimen/_8ssp"
-                app:cardCornerRadius="@dimen/_14ssp"
-                app:layout_constraintTop_toBottomOf="@id/id_image_notification"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                >
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:background="@drawable/drf_gradient_yellow">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/id_text_countdown_timer"
-                        style="@style/style_text_10"
-                        android:textSize="@dimen/_25ssp"
-                        android:text="08:45:47 SEC"
-                        android:textColor="@color/color_blue_600"
-                        android:fontFamily="@font/font_cinzel_400" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/id_card_events_details"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp"
-                app:cardCornerRadius="@dimen/_10ssp"
-                android:layout_margin="@dimen/_8ssp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/id_card_timer">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/drf_gradient_yellow"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="@dimen/_10ssp"
-                        app:cardBackgroundColor="@color/color_blue_600"
-                        android:layout_marginStart="@dimen/_6ssp"
-                        android:layout_marginEnd="@dimen/_6ssp"
-                        android:layout_marginTop="@dimen/_6ssp"
-                        app:cardElevation="0dp">
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:id="@+id/id_text_address"
-                                style="@style/style_text_10"
-                                android:layout_weight="1"
-                                android:maxLines="2"
-                                android:ellipsize="end"
-                                android:layout_gravity="center"
-                                android:text="Complete Address of Events from latitude and longitude"
-                                android:textColor="@color/color_yellow_400"
-                                android:layout_marginStart="@dimen/_8ssp"
-                                android:layout_marginTop="@dimen/_6ssp"
-                                android:layout_marginBottom="@dimen/_6ssp" />
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="@dimen/_36ssp"
-                                android:layout_height="@dimen/_36ssp"
-                                app:cardElevation="0dp"
-                                android:layout_margin="@dimen/_4ssp"
-                                app:cardBackgroundColor="@color/color_yellow_400" >
-
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:rotation="45"
-                                    android:layout_margin="@dimen/_6ssp"
-                                    android:tint="@color/color_blue_600"
-                                    app:srcCompat="@drawable/ic_black_outline_navigation_up_circle" />
-
-                            </com.google.android.material.card.MaterialCardView>
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="@dimen/_10ssp"
-                        app:cardBackgroundColor="@color/color_blue_600"
-                        android:layout_marginStart="@dimen/_6ssp"
-                        android:layout_marginEnd="@dimen/_6ssp"
-                        android:layout_marginTop="@dimen/_2ssp"
-                        app:cardElevation="0dp">
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="@dimen/_36ssp"
-                                android:layout_height="@dimen/_36ssp"
-                                app:cardElevation="0dp"
-                                android:layout_margin="@dimen/_6ssp"
-                                app:cardBackgroundColor="@color/color_yellow_400" >
-
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_margin="@dimen/_6ssp"
-                                    android:tint="@color/color_blue_600"
-                                    app:srcCompat="@drawable/ic_black_outline_add_timer" />
-
-                            </com.google.android.material.card.MaterialCardView>
-
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_8ssp"
-                                android:layout_gravity="center">
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    android:id="@+id/id_text_date"
-                                    style="@style/style_text_10"
-                                    android:layout_gravity="center"
-                                    android:text="10 July 2023"
-                                    android:textSize="@dimen/_13ssp"
-                                    android:textColor="@color/color_yellow_400" />
-
-                                <View
-                                    android:layout_width="@dimen/_8ssp"
-                                    android:layout_height="@dimen/_8ssp"
-                                    android:rotation="45"
-                                    android:background="@color/color_yellow_400"
-                                    android:layout_gravity="center"
-                                    android:layout_marginStart="@dimen/_10ssp"
-                                    android:layout_marginEnd="@dimen/_10ssp" />
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    android:id="@+id/id_text_time"
-                                    style="@style/style_text_10"
-                                    android:layout_gravity="center"
-                                    android:text="05:45 PM"
-                                    android:textSize="@dimen/_13ssp"
-                                    android:textColor="@color/color_yellow_400" />
-
-                            </androidx.appcompat.widget.LinearLayoutCompat>
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="@dimen/_10ssp"
-                        android:layout_marginStart="@dimen/_6ssp"
-                        android:layout_marginTop="@dimen/_2ssp"
-                        android:layout_marginEnd="@dimen/_6ssp"
-                        android:layout_marginBottom="@dimen/_6ssp"
-                        app:cardBackgroundColor="@color/color_blue_600"
-                        app:cardElevation="0dp">
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <com.google.android.material.card.MaterialCardView
-                                android:layout_width="@dimen/_36ssp"
-                                android:layout_height="@dimen/_36ssp"
-                                app:cardElevation="0dp"
-                                android:layout_margin="@dimen/_6ssp"
-                                app:cardBackgroundColor="@color/color_yellow_400" >
-
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_margin="@dimen/_6ssp"
-                                    android:tint="@color/color_blue_600"
-                                    app:srcCompat="@drawable/ic_black_outline_emoji_smile" />
-
-                            </com.google.android.material.card.MaterialCardView>
-
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_8ssp"
-                                android:orientation="vertical"
-                                android:layout_gravity="center">
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    style="@style/style_text_10"
-                                    android:text="Organised By,"
-                                    android:textColor="@color/color_yellow_400" />
-
-                                <androidx.appcompat.widget.AppCompatTextView
-                                    android:id="@+id/id_text_organizer"
-                                    style="@style/style_text_10"
-                                    android:layout_gravity="center"
-                                    android:text="Akshay Pawar"
-                                    android:textSize="@dimen/_12ssp"
-                                    android:fontFamily="@font/font_cinzel_600"
-                                    android:textColor="@color/color_yellow_400" />
-
-                            </androidx.appcompat.widget.LinearLayoutCompat>
-
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-
-                    </com.google.android.material.card.MaterialCardView>
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/id_container_updates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="@dimen/_10ssp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp"
-                android:layout_margin="@dimen/_10ssp"
-                app:cardBackgroundColor="@color/color_gray_200"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/id_card_events_details">
+                app:cardBackgroundColor="@color/color_blue_600"
+                android:layout_marginStart="@dimen/_6ssp"
+                android:layout_marginEnd="@dimen/_6ssp"
+                android:layout_marginTop="@dimen/_6ssp"
+                app:cardElevation="0dp">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/id_container_update_pending"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_6ssp"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/id_update_title"
+                        android:id="@+id/id_text_address"
                         style="@style/style_text_8"
-                        android:textColor="@color/black"
-                        android:text="Will you available this satsang which will be hold  on Monday 10 July 2023?"
-                        android:fontFamily="@font/font_cinzel_400" />
+                        android:layout_weight="1"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_gravity="center"
+                        android:text="Complete Address of Events from latitude and longitude"
+                        android:textColor="@color/color_yellow_400"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginTop="@dimen/_6ssp"
+                        android:layout_marginBottom="@dimen/_6ssp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_30ssp"
+                        android:layout_height="@dimen/_30ssp"
+                        app:cardElevation="0dp"
+                        android:layout_margin="@dimen/_4ssp"
+                        app:cardBackgroundColor="@color/color_yellow_400" >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:rotation="45"
+                            android:layout_margin="@dimen/_6ssp"
+                            android:tint="@color/color_blue_600"
+                            app:srcCompat="@drawable/ic_black_outline_navigation_up_circle" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10ssp"
+                app:cardBackgroundColor="@color/color_blue_600"
+                android:layout_marginStart="@dimen/_6ssp"
+                android:layout_marginEnd="@dimen/_6ssp"
+                android:layout_marginTop="@dimen/_2ssp"
+                app:cardElevation="0dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_30ssp"
+                        android:layout_height="@dimen/_30ssp"
+                        app:cardElevation="0dp"
+                        android:layout_margin="@dimen/_6ssp"
+                        app:cardBackgroundColor="@color/color_yellow_400" >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_6ssp"
+                            android:tint="@color/color_blue_600"
+                            app:srcCompat="@drawable/ic_black_outline_add_timer" />
+
+                    </com.google.android.material.card.MaterialCardView>
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_6ssp"
-                        android:layout_gravity="end">
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_gravity="center">
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/id_text_date"
                             style="@style/style_text_10"
-                            android:text="YES"
-                            android:fontFamily="@font/font_cinzel_600"
-                            android:textColor="@color/color_blue_600" />
+                            android:layout_gravity="center"
+                            android:text="10 July 2023"
+                            android:textColor="@color/color_yellow_400" />
 
                         <View
-                            android:layout_width="@dimen/_4ssp"
-                            android:layout_height="@dimen/_4ssp"
+                            android:layout_width="@dimen/_6ssp"
+                            android:layout_height="@dimen/_6ssp"
+                            android:rotation="45"
+                            android:background="@color/color_yellow_400"
                             android:layout_gravity="center"
-                            android:layout_marginStart="@dimen/_10ssp"
-                            android:layout_marginEnd="@dimen/_10ssp"
-                            android:background="@drawable/drf_black_dot" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            style="@style/style_text_10"
-                            android:text="NO"
-                            android:fontFamily="@font/font_cinzel_600"
-                            android:textColor="@color/color_blue_600" />
-
-
-                        <View
-                            android:layout_width="@dimen/_4ssp"
-                            android:layout_height="@dimen/_4ssp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/drf_black_dot"
                             android:layout_marginStart="@dimen/_10ssp"
                             android:layout_marginEnd="@dimen/_10ssp" />
 
-
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/id_text_time"
                             style="@style/style_text_10"
-                            android:text="NOT SURE"
-                            android:fontFamily="@font/font_cinzel_600"
-                            android:textColor="@color/color_blue_600" />
+                            android:layout_gravity="center"
+                            android:text="05:45 PM"
+                            android:textColor="@color/color_yellow_400" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10ssp"
+                android:layout_marginStart="@dimen/_6ssp"
+                android:layout_marginTop="@dimen/_2ssp"
+                android:layout_marginEnd="@dimen/_6ssp"
+                android:layout_marginBottom="@dimen/_6ssp"
+                app:cardBackgroundColor="@color/color_blue_600"
+                app:cardElevation="0dp">
+
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/id_container_update_done"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_margin="@dimen/_6ssp">
+                    android:layout_height="wrap_content">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/style_text_10"
-                        android:textColor="@color/black"
-                        android:text="Thanks for Update Us..."
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/_10ssp"
-                        android:fontFamily="@font/font_cinzel_400" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_30ssp"
+                        android:layout_height="@dimen/_30ssp"
+                        app:cardElevation="0dp"
+                        android:layout_margin="@dimen/_6ssp"
+                        app:cardBackgroundColor="@color/color_yellow_400" >
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/_20ssp"
-                        android:layout_height="@dimen/_20ssp"
-                        android:layout_margin="@dimen/_4ssp"
-                        android:src="@drawable/ic_black_outline_emoji_smile"
-                        />
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_6ssp"
+                            android:tint="@color/color_blue_600"
+                            app:srcCompat="@drawable/ic_black_outline_emoji_smile" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/style_text_10"
+                            android:text="Organised By,"
+                            android:textColor="@color/color_yellow_400" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/id_text_organizer"
+                            style="@style/style_text_10"
+                            android:layout_gravity="center"
+                            android:text="Akshay Pawar"
+                            android:textSize="@dimen/_12ssp"
+                            android:fontFamily="@font/font_cinzel_600"
+                            android:textColor="@color/color_yellow_400" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
             </com.google.android.material.card.MaterialCardView>
 
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/id_tabLayout"
-                android:layout_width="match_parent"
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/id_container_updates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_10ssp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp"
+        android:layout_margin="@dimen/_10ssp"
+        app:cardBackgroundColor="@color/color_gray_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_card_events_details">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/id_container_update_pending"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_6ssp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_update_title"
+                style="@style/style_text_8"
+                android:textColor="@color/black"
+                android:text="Will you available this satsang which will be hold  on Monday 10 July 2023?"
+                android:fontFamily="@font/font_cinzel_400" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/id_container_updates">
+                android:layout_marginEnd="@dimen/_6ssp"
+                android:layout_gravity="end">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_yes"
+                    style="@style/style_text_10"
+                    android:text="YES"
+                    android:fontFamily="@font/font_cinzel_600"
+                    android:textColor="@color/color_blue_600" />
+
+                <View
+                    android:layout_width="@dimen/_4ssp"
+                    android:layout_height="@dimen/_4ssp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp"
+                    android:background="@drawable/drf_black_dot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_no"
+                    style="@style/style_text_10"
+                    android:text="NO"
+                    android:fontFamily="@font/font_cinzel_600"
+                    android:textColor="@color/color_blue_600" />
 
 
-                <com.google.android.material.tabs.TabItem
-                    style="@style/style_text_8"
-                    android:text="@string/schedules" />
-
-                <com.google.android.material.tabs.TabItem
-                    style="@style/style_text_8"
-                    android:text="@string/available" />
-
-                <com.google.android.material.tabs.TabItem
-                    style="@style/style_text_8"
-                    android:text="@string/your_seva" />
-
-            </com.google.android.material.tabs.TabLayout>
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/id_viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:nestedScrollingEnabled="false"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/id_tabLayout" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.core.widget.NestedScrollView>
+                <View
+                    android:layout_width="@dimen/_4ssp"
+                    android:layout_height="@dimen/_4ssp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/drf_black_dot"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_10ssp" />
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_not_sure"
+                    style="@style/style_text_10"
+                    android:text="NOT SURE"
+                    android:fontFamily="@font/font_cinzel_600"
+                    android:textColor="@color/color_blue_600" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/id_container_update_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="@dimen/_6ssp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/style_text_10"
+                android:textColor="@color/black"
+                android:text="Thanks for Update Us..."
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:fontFamily="@font/font_cinzel_400" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20ssp"
+                android:layout_height="@dimen/_20ssp"
+                android:layout_margin="@dimen/_4ssp"
+                android:src="@drawable/ic_black_outline_emoji_smile"
+                />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/id_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_container_updates">
+
+
+        <com.google.android.material.tabs.TabItem
+            style="@style/style_text_8"
+            android:text="@string/schedules" />
+
+        <com.google.android.material.tabs.TabItem
+            style="@style/style_text_8"
+            android:text="@string/available" />
+
+        <com.google.android.material.tabs.TabItem
+            style="@style/style_text_8"
+            android:text="@string/your_seva" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/id_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_tabLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 

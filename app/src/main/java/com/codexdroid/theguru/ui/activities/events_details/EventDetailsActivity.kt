@@ -1,6 +1,7 @@
 package com.codexdroid.theguru.ui.activities.events_details
 
 import android.content.Intent
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import com.codexdroid.theguru.R
 import com.codexdroid.theguru.controllers.adapters.EventDetailsViewPagerAdapter
@@ -47,11 +48,19 @@ class EventDetailsActivity : BaseActivity<ActivityEventDetailsBinding, EventsDet
         requestBinding().idImageNotification.setOnClickListener {
             notificationLauncher.launch(Intent(this@EventDetailsActivity, NotificationActivity::class.java))
         }
+
+        requestBinding().idTextYes.setOnClickListener {  dismissUpdate() }
+        requestBinding().idTextNo.setOnClickListener {  dismissUpdate() }
+        requestBinding().idTextNotSure.setOnClickListener {  dismissUpdate() }
     }
 
     override fun requestSetUpObserver() {
         super.requestSetUpObserver()
     }
 
+
+    private fun dismissUpdate() {
+        requestBinding().idContainerUpdates.visibility = View.GONE
+    }
 
 }
