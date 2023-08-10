@@ -47,4 +47,13 @@
     <string name="update_seva">Update Seva</string>
     <string name="seva_description">Seva Description</string>
     <string name="mobile">Mobile</string>
+    <string name="create_new_event">Create New Event</string>
+    <string name="let_s_create_event">Let\'s Create Event</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="select_event_date">Select Event Date</string>
+    <string name="add_schedule">Add Schedule</string>
+    <string name="next">Next</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>

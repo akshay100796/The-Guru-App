@@ -56,4 +56,9 @@ object AppConstants {
         const val MEMBER = "Member"
         const val ADMIN = "Admin"
     }
+
+    object UI {
+        const val SEARCH = "ui_search"
+        const val RESET = "ui_clear"
+    }
 }

@@ -1,5 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.TheGuru" parent="Theme.Material3.DayNight.NoActionBar" />
-    <style name="Theme.TheGuru" parent="Base.Theme.TheGuru" />
+    <style name="Theme.TheGuru" parent="Base.Theme.TheGuru">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

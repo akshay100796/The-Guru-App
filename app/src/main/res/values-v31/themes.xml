@@ -6,5 +6,7 @@
         <item name="android:windowSplashScreenAnimationDuration">3000</item>
         <item name="android:windowSplashScreenBrandingImage">@mipmap/ic_logo_round</item>
         <item name="postSplashScreenTheme">@style/Theme.TheGuru</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

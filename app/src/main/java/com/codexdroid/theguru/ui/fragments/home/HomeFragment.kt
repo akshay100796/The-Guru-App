@@ -1,6 +1,7 @@
 package com.codexdroid.theguru.ui.fragments.home
 
 import android.content.Intent
+import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import com.codexdroid.theguru.controllers.adapters.GuruLearningsAdapter
 import com.codexdroid.theguru.controllers.adapters.UpcomingEventsAdapter
@@ -8,8 +9,10 @@ import com.codexdroid.theguru.controllers.data_models.local.Events
 import com.codexdroid.theguru.controllers.data_models.local.Learnings
 import com.codexdroid.theguru.controllers.interfaces.RecyclerItemClickListener
 import com.codexdroid.theguru.databinding.FragmentHomeBinding
+import com.codexdroid.theguru.ui.activities.create_event.CreateEventActivity
 import com.codexdroid.theguru.ui.activities.events_details.EventDetailsActivity
 import com.codexdroid.theguru.ui.base.BaseFragment
+import com.codexdroid.theguru.utility.AppConstants
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,6 +36,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     private lateinit var upcomingEventsAdapter: UpcomingEventsAdapter
 
     private val eventDetailsLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
+    private val newEventLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {}
 
     override fun requestInitialised() {
         super.requestInitialised()
@@ -47,10 +51,33 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun requestSetUpListeners() {
         super.requestSetUpListeners()
+        requestBinding().idImageSearch.setOnClickListener { requestViewModel().requestUpdateUi(AppConstants.UI.SEARCH) }
+        requestBinding().idImageClearText.setOnClickListener { requestViewModel().requestUpdateUi(AppConstants.UI.RESET) }
+        requestBinding().idButtonCreateEvent.setOnClickListener {  newEventLauncher.launch(Intent(requireContext(), CreateEventActivity::class.java))}
     }
 
     override fun requestSetUpObserver() {
         super.requestSetUpObserver()
+
+        requestViewModel().updateUi.observe(viewLifecycleOwner) {
+            when (it) {
+                AppConstants.UI.SEARCH -> {
+                    requestBinding().apply {
+                        idSearchContainer.visibility = View.VISIBLE
+                        idImageSearch.visibility = View.GONE
+                        idButtonCreateEvent.visibility = View.GONE
+                    }
+                }
+                AppConstants.UI.RESET -> {
+                    requestBinding().apply {
+                        idSearchContainer.visibility = View.GONE
+                        idImageSearch.visibility = View.VISIBLE
+                        idButtonCreateEvent.visibility = View.VISIBLE
+                    }
+                }
+                else -> {}
+            }
+        }
     }
 
     private fun requestShowLearningsAdapter() {

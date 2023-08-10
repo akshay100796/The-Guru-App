@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.codexdroid.theguru.databinding.LayoutRecyclerSchedulesBinding
 
-class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
+class ScheduleEventsAdapter : RecyclerView.Adapter<ScheduleEventsAdapter.ScheduleViewHolder>() {
 
     inner class ScheduleViewHolder(val binding: LayoutRecyclerSchedulesBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -15,10 +15,7 @@ class ScheduleAdapter : RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>
     }
 
     override fun onBindViewHolder(holder: ScheduleViewHolder, position: Int) {
-        holder.binding.apply {
-            idTextEdit.visibility = View.GONE
-            idTextDelete.visibility = View.GONE
-        }
+        holder.binding.apply {}
     }
 
     override fun getItemCount(): Int = 10

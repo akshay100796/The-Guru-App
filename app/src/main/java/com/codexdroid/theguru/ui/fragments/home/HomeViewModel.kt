@@ -1,5 +1,7 @@
 package com.codexdroid.theguru.ui.fragments.home
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 /**
@@ -11,4 +13,14 @@ import androidx.lifecycle.ViewModel
  * MH-15, India
  */
 
-class HomeViewModel: ViewModel() {}
+class HomeViewModel: ViewModel() {
+
+
+    private var _updateUi = MutableLiveData<String>()
+    val updateUi : LiveData<String> = _updateUi
+
+    fun requestUpdateUi(type: String) {
+        _updateUi.postValue(type)
+    }
+
+}

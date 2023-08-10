@@ -21,6 +21,9 @@
         android:theme="@style/Theme.TheGuru"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.create_event.CreateEventActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.notification.NotificationActivity"
             android:exported="false" />
         <activity
