@@ -34,7 +34,7 @@ class CreateEventActivity : BaseActivity<ActivityCreateEventBinding, CreateEvent
         onBackPressedDispatcher.addCallback(onBackPress)
         navHostFragment = supportFragmentManager.findFragmentById(R.id.id_nav_host_home_fragments) as NavHostFragment
         navController = navHostFragment.navController
-        navGraph = navController.navInflater.inflate(R.navigation.nav_home)
+        navGraph = navController.navInflater.inflate(R.navigation.nav_create_event)
     }
 
     override fun requestSetUpListeners() {

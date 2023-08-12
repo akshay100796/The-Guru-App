@@ -142,7 +142,7 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/id_button_add_events"
+            android:id="@+id/id_button_add_schedule"
             style="@style/wrap_wrap"
             android:text="@string/add_schedule"
             android:fontFamily="@font/font_cinzel_400"

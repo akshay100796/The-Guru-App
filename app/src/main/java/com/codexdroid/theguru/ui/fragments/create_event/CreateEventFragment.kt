@@ -1,15 +1,15 @@
 package com.codexdroid.theguru.ui.fragments.create_event
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
 import com.codexdroid.theguru.R
 import com.codexdroid.theguru.controllers.adapters.ScheduleEventsAdapter
 import com.codexdroid.theguru.databinding.FragmentCreateEventBinding
 import com.codexdroid.theguru.ui.base.BaseFragment
+import com.codexdroid.theguru.ui.fragments.add_schedule.AddScheduleFragment
+import com.codexdroid.theguru.ui.fragments.create_event.CreateEventFragmentDirections
+import com.codexdroid.theguru.utility.AppConstants
 import com.google.android.material.datepicker.MaterialDatePicker
+
 
 /**
  * Copyright (C) ERxPharmaPro - All Rights Reserved
@@ -29,6 +29,14 @@ class CreateEventFragment : BaseFragment<FragmentCreateEventBinding, CreateEvent
 
     override fun requestSetUpListeners() {
         super.requestSetUpListeners()
+        requestBinding().idButtonAddSchedule.setOnClickListener {
+            AddScheduleFragment().show(childFragmentManager, AppConstants.SHEET.CREATE_EVENT)
+        }
+
+        requestBinding().idButtonNext.setOnClickListener {
+            val action = CreateEventFragmentDirections.actionIdFragmentCreateEventToIdFragmentAssignSeva()
+            NavHostFragment.findNavController(this).navigate(action)
+        }
     }
 
     override fun requestSetUpObserver() {

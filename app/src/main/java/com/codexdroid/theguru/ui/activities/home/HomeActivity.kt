@@ -4,7 +4,6 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.codexdroid.theguru.R
 import com.codexdroid.theguru.controllers.adapters.HomeMenuAdapters
 import com.codexdroid.theguru.controllers.data_models.local.HomeMenu
@@ -57,6 +56,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeActivityViewModel>() 
     private fun requestSetUpHomeMenu() {
         val list = listOf<HomeMenu>(
             HomeMenu(getString(R.string.home), requestDrawable(resources,R.drawable.ic_black_filled_home), AppConstants.HomeMenus.MENU_HOME, true),
+            HomeMenu(getString(R.string.events), requestDrawable(resources,R.drawable.ic_black_add_multi_circle),AppConstants.HomeMenus.MENU_EVENTS),
             HomeMenu(getString(R.string.past_events), requestDrawable(resources,R.drawable.ic_black_outline_history_time_repeat),AppConstants.HomeMenus.MENU_PAST_EVENTS),
             HomeMenu(getString(R.string.profile), requestDrawable(resources,R.drawable.ic_black_outline_person_circle),AppConstants.HomeMenus.MENU_PROFILE)
         )
@@ -73,6 +73,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeActivityViewModel>() 
 
                     when (menu.requestMenuType()) {
                         AppConstants.HomeMenus.MENU_HOME -> navigateTo(R.id.id_fragment_home)
+                        AppConstants.HomeMenus.MENU_EVENTS -> navigateTo(R.id.id_fragment_events)
                         AppConstants.HomeMenus.MENU_PAST_EVENTS -> navigateTo(R.id.id_fragment_past_events)
                         AppConstants.HomeMenus.MENU_PROFILE -> navigateTo(R.id.id_fragment_profile)
                     }

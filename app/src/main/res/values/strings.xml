@@ -56,4 +56,17 @@
     <string name="next">Next</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="events_starts_on">Events Starts on</string>
+    <string name="events_end_on">Events End on</string>
+    <string name="hh_mm_ss">HH:MM:SS</string>
+    <string name="event_title">Event Title</string>
+    <string name="event_description">Event Description</string>
+    <string name="create_schedule">Create Schedule</string>
+    <string name="create_seva">Create Seva</string>
+    <string name="short_description_of_seva">Short Description of Seva</string>
+    <string name="seva_desc__language">Apan Devgiri madhe pan lihu Shaktat, Dhanyawad</string>
+    <string name="seva_assigned_to">Seva Assigned to</string>
+    <string name="assigned_to">Assigned to,</string>
+    <string name="assign_seva">Assign Seva\'s</string>
+    <string name="events">Events</string>
 </resources>

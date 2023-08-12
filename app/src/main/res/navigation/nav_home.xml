@@ -11,6 +11,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/id_fragment_events"
+        android:name="com.codexdroid.theguru.ui.fragments.EventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" />
+
+    <fragment
         android:id="@+id/id_fragment_past_events"
         android:name="com.codexdroid.theguru.ui.fragments.past_events.PastEventsFragment"
         tools:layout="@layout/fragment_past_events" />
@@ -19,5 +25,6 @@
         android:id="@+id/id_fragment_profile"
         android:name="com.codexdroid.theguru.ui.fragments.profile.ProfileFragment"
         tools:layout="@layout/fragment_profile" />
+
 
 </navigation>

@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/id_fragment_create_event"
         android:name="com.codexdroid.theguru.ui.fragments.create_event.CreateEventFragment"
-        tools:layout="@layout/fragment_create_event" />
+        tools:layout="@layout/fragment_create_event" >
+        <action
+            android:id="@+id/action_id_fragment_create_event_to_id_fragment_assign_seva"
+            app:destination="@id/id_fragment_assign_seva" />
+    </fragment>
 
     <fragment
         android:id="@+id/id_fragment_assign_seva"

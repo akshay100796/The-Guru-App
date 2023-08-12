@@ -34,8 +34,10 @@ object AppConstants {
 
     object HomeMenus {
         const val MENU_HOME = "menu_home"
+        const val MENU_EVENTS = "menu_events"
         const val MENU_PAST_EVENTS = "menu_past_events"
         const val MENU_PROFILE = "menu_profile"
+
     }
     object Errors {
         const val EMAIL = "email"
@@ -60,5 +62,21 @@ object AppConstants {
     object UI {
         const val SEARCH = "ui_search"
         const val RESET = "ui_clear"
+    }
+
+    object SHEET {
+        const val CREATE_EVENT = "sheet_events"
+        const val UPDATE_SEVA = "update_seva"
+        const val CREATE_SEVA = "create_seva"
+        const val MAP = "map"
+    }
+
+    object RecyclerView {
+        const val ITEM_ADD = "item_add"
+        const val ITEM_EDIT = "item_edit"
+        const val ITEM_DELETE = "item_delete"
+        const val ITEM_CLICKED = "item_clicked"
+        const val ITEM = "item"
+        const val POSITION = "position"
     }
 }
