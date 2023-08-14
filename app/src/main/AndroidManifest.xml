@@ -40,7 +40,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
 
-<!--        android:theme="@style/style_splash"-->
+        <!--        android:theme="@style/style_splash"-->
         <activity
             android:name=".ui.activities.splash.SplashActivity"
             android:exported="true">
