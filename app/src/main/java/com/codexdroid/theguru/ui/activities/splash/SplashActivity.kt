@@ -2,15 +2,21 @@ package com.codexdroid.theguru.ui.activities.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.os.Build
+import android.os.Handler
+import android.os.Looper
+import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.codexdroid.theguru.R
+import com.codexdroid.theguru.databinding.ActivitySplashBinding
+import com.codexdroid.theguru.di.room.TGViewModel
+import com.codexdroid.theguru.di.room.tables.TableLearnings
 import com.codexdroid.theguru.ui.activities.login.LoginActivity
 import com.codexdroid.theguru.ui.activities.home.HomeActivity
-import com.codexdroid.theguru.utility.PrefManager
+import com.codexdroid.theguru.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /**
  * Copyright (C) The-Guru - All Rights Reserved
@@ -23,16 +29,46 @@ import javax.inject.Inject
 
 @SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
 
-    @Inject lateinit var prefManager: PrefManager
+    private val tgViewModel by viewModels<TGViewModel>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        val splash = installSplashScreen()
-        super.onCreate(savedInstanceState)
-        splash.setKeepOnScreenCondition { true }
-        setContentView(R.layout.activity_splash)
 
-        startActivity(Intent(this, prefManager.getToken()?.let { HomeActivity::class.java } ?: LoginActivity::class.java))
+    override fun requestInitialised() {
+        super.requestInitialised()
+
+        CoroutineScope(Dispatchers.IO).launch {
+            launch {  requestSaveLearnings() }
+            launch {  requestLoadLearnings() }
+        }
+        when (Build.VERSION.SDK_INT) {
+
+            //This is Min Version Android 10
+            Build.VERSION_CODES.Q -> {
+                Handler(Looper.getMainLooper()).postDelayed ({ toNext() }, 3000L)
+            }
+            Build.VERSION_CODES.R,Build.VERSION_CODES.S -> {
+                installSplashScreen().setKeepOnScreenCondition { true }
+                toNext()
+            }
+        }
+    }
+
+    private fun toNext() {
+        startActivity(Intent(this, requestPreferenceManager().getToken()?.let { HomeActivity::class.java } ?: LoginActivity::class.java))
+        finish()
+    }
+
+    private suspend fun requestSaveLearnings() {
+        val learnings = listOf (
+            TableLearnings(1,"Assurance in being","Guru Learnings"),
+            TableLearnings(2,"Follow the path of heart","Guru Learnings"),
+            TableLearnings(3,"Experience the power within","Kundalini Shakti")
+        )
+        tgViewModel.requestSaveLearnings(learnings)
+    }
+
+    private fun requestLoadLearnings() {
+        requestViewModel().requestLoadLearnings(this)
     }
 }

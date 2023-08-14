@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/id_fragment_events"
-        android:name="com.codexdroid.theguru.ui.fragments.EventsFragment"
+        android:name="com.codexdroid.theguru.ui.fragments.events.EventsFragment"
         android:label="fragment_events"
         tools:layout="@layout/fragment_events" />
 

@@ -120,16 +120,10 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.13.2")
 
     implementation("com.intuit.ssp:ssp-android:1.1.0")
-
-    implementation("com.vanniktech:android-image-cropper:4.5.0")
-    implementation("com.jsibbold:zoomage:1.3.1")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("com.airbnb.android:lottie:5.2.0")
     implementation("com.facebook.shimmer:shimmer:0.5.0")
 
-    //Room Database //By Changing Version will may cause to compiler error
-    //kotlin("kapt","androidx.room:room-compiler:2.5.1")
-    //kotlin("kapt","androidx.room:room-compiler:2.5.1")
     kapt ("androidx.room:room-compiler:2.5.2")
     implementation("androidx.room:room-ktx:2.5.2")
     testImplementation("androidx.room:room-testing:2.5.2")

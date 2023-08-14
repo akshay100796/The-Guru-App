@@ -9,7 +9,7 @@
         app:cardElevation="0dp"
         app:strokeWidth="0dp"
         android:layout_marginStart="@dimen/_4ssp"
-        android:layout_marginTop="@dimen/_6ssp"
+        android:layout_marginBottom="@dimen/_6ssp"
         android:layout_marginEnd="@dimen/_4ssp"
         app:cardCornerRadius="@dimen/_20ssp">
 

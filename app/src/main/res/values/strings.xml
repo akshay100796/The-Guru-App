@@ -21,7 +21,6 @@
     <string name="whats_app_number">Whats-App Number</string>
     <string name="error_text_invalid_mobile">Invalid Mobile or WhatsApp Number</string>
     <string name="register">Register</string>
-    <string name="auto_generate_password_amp_mail_me"><![CDATA[Auto Generate Password & Mail Me]]></string>
     <string name="register_as">Register As,</string>
     <string name="confirm">Confirm?</string>
     <string name="message_alert_cancel_registration">Do you want to cancel Registration Process?</string>
@@ -69,4 +68,8 @@
     <string name="assigned_to">Assigned to,</string>
     <string name="assign_seva">Assign Seva\'s</string>
     <string name="events">Events</string>
+    <string name="your_created_events">Your Created Events</string>
+    <string name="your_events">Your Events</string>
+    <string name="text_error_email_exists">Apologized, Email id already register with us</string>
+    <string name="auto_generate_password">Auto Generate Password</string>
 </resources>

@@ -4,10 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.codexdroid.theguru.di.room.tables.TableLearnings
 import com.codexdroid.theguru.di.room.tables.TableSelf
 import com.codexdroid.theguru.utility.AppConstants
 
-@Database(entities = [TableSelf::class], version = 1)
+@Database(entities = [TableSelf::class, TableLearnings::class], version = 1)
 abstract class TGDatabase : RoomDatabase() {
     abstract fun requestDaoInstance() : TGDao
     companion object {

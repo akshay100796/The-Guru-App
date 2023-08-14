@@ -26,6 +26,7 @@
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_label_login"
             style="@style/wrap_wrap"
             android:text="@string/login"
             android:textSize="@dimen/_30ssp"

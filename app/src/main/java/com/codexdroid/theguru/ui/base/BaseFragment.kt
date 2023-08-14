@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.codexdroid.theguru.di.room.TGViewModel
 import com.codexdroid.theguru.di.room.TGViewModelFactory
+import com.codexdroid.theguru.di.room.tables.TableLearnings
 import com.codexdroid.theguru.utility.PrefManager
 import com.google.firebase.auth.FirebaseAuth
 import java.lang.reflect.ParameterizedType
@@ -42,19 +43,32 @@ abstract class BaseFragment<viewBinding: ViewBinding, viewModel: ViewModel>: Fra
     private val prefManager by lazy { PrefManager(requireContext()) }
     private val fragmentViewModel : BaseFragmentViewModel by viewModels { BaseViewModelFactory(requireActivity().application) }
 
-    open fun requestBinding() = _viewBinding
-    open fun requestViewModel() = _viewModel
+    private lateinit var learnings: List<TableLearnings>
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        roomViewModel.requestLoadLearnings()
+        return _viewBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        roomViewModel.learnings.observe(viewLifecycleOwner) {
+            learnings = it
+        }
 
         requestInitialised()
         requestSetUpListeners()
         requestSetUpObserver()
-
-        return _viewBinding.root
     }
 
 
+    open fun requestBinding() = _viewBinding
+    open fun requestViewModel() = _viewModel
+    open fun requestFirebaseAuth() = firebaseAuthentication
+    open fun loadLearnings() = learnings
     open fun requestInitialised() {}
     open fun requestSetUpListeners() {}
     open fun requestSetUpObserver() {}

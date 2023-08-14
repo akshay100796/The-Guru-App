@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager.widget.PagerAdapter
 import com.codexdroid.theguru.R
-import com.codexdroid.theguru.controllers.data_models.local.Learnings
 import com.codexdroid.theguru.databinding.LayoutViewpagerLearningsBinding
+import com.codexdroid.theguru.di.room.tables.TableLearnings
 
 
-class GuruLearningsAdapter(private val learnings: List<Learnings>) : PagerAdapter() {
+class GuruLearningsAdapter(private val learnings: List<TableLearnings>) : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         try {

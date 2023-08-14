@@ -30,7 +30,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeActivityViewModel>() 
     private lateinit var navController: NavController
     private lateinit var navGraph: NavGraph
 
-
     private val onBackPress: OnBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() { finish() }
     }

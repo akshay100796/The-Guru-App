@@ -224,7 +224,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/style_text_10"
                 android:layout_gravity="center"
-                android:text="@string/auto_generate_password_amp_mail_me"
+                android:text="@string/auto_generate_password"
                 android:textColor="@color/color_blue_600" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
