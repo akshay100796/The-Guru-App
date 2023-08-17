@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/id_fragment_global"
+        android:title="@string/home"
+        android:enabled="true"
+        android:icon="@drawable/ic_black_filled_home" />
+
+    <item android:id="@+id/id_fragment_past_events"
+        android:title="@string/past_events"
+        android:enabled="true"
+        android:icon="@drawable/ic_black_outline_history_time_repeat" />
+
+    <item android:id="@+id/id_fragment_profile"
+        android:icon="@drawable/ic_black_outline_person_circle"
+        android:title="@string/profile"
+        android:enabled="true" />
+
+</menu>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/id_fragment_centers">
+
+    <fragment
+        android:id="@+id/id_fragment_centers"
+        android:name="com.codexdroid.theguru.ui.fragments.centers.CentersFragment"
+        android:label="fragment_centers"
+        tools:layout="@layout/fragment_centers" />
+
+    <fragment
+        android:id="@+id/id_fragment_global"
+        android:name="com.codexdroid.theguru.ui.fragments.globals.GlobalEventFragment"
+        tools:layout="@layout/fragment_global" />
+
+    <fragment
+        android:id="@+id/id_fragment_events"
+        android:name="com.codexdroid.theguru.ui.fragments.events.EventsFragment"
+        android:label="fragment_events"
+        tools:layout="@layout/fragment_events" />
+
+    <fragment
+        android:id="@+id/id_fragment_past_events"
+        android:name="com.codexdroid.theguru.ui.fragments.past_events.PastEventsFragment"
+        tools:layout="@layout/fragment_past_events" />
+
+    <fragment
+        android:id="@+id/id_fragment_profile"
+        android:name="com.codexdroid.theguru.ui.fragments.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+
+
+</navigation>

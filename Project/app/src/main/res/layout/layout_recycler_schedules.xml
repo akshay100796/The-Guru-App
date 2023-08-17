@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <View
+            android:id="@+id/id_view_dot_1"
+            android:layout_width="@dimen/_16ssp"
+            android:layout_height="@dimen/_16ssp"
+            android:background="@drawable/drf_black_dot"
+            android:backgroundTint="@color/color_blue_600"
+            android:layout_margin="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_start_time"
+            style="@style/style_text_10"
+            android:text="05:45 PM"
+            android:fontFamily="@font/font_cinzel_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            app:layout_constraintStart_toEndOf="@id/id_view_dot_1"
+            app:layout_constraintTop_toTopOf="@id/id_view_dot_1" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/id_card_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/_10ssp"
+            app:strokeWidth="0dp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            app:layout_constraintTop_toBottomOf="@id/id_text_start_time"
+            app:layout_constraintStart_toStartOf="@id/id_text_start_time"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/drf_gradient_yellow">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_title"
+                    style="@style/style_text_10"
+                    android:text="title"
+                    android:layout_margin="@dimen/_10ssp"
+                    android:textColor="@color/color_blue_600"
+                    android:fontFamily="@font/font_cinzel_800"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_description"
+                    style="@style/style_text_10"
+                    android:text="title description"
+                    android:layout_marginStart="@dimen/_10ssp"
+                    android:layout_marginBottom="@dimen/_10ssp"
+                    android:textColor="@color/color_blue_600"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/id_text_title" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_time"
+                    style="@style/style_text_10"
+                    android:text="10 Mins"
+                    android:fontFamily="@font/font_cinzel_400"
+                    android:layout_margin="@dimen/_10ssp"
+                    android:textColor="@color/color_blue_600"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_edit"
+                    style="@style/style_text_10"
+                    android:text="@string/edit"
+                    android:textAllCaps="true"
+                    android:textColor="@color/color_blue_600"
+                    android:fontFamily="@font/font_cinzel_800"
+                    android:layout_marginBottom="@dimen/_4ssp"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/id_text_description"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_delete"
+                    style="@style/style_text_10"
+                    android:text="@string/delete"
+                    android:textColor="@color/color_error_red"
+                    android:fontFamily="@font/font_cinzel_800"
+                    android:layout_marginBottom="@dimen/_4ssp"
+                    android:layout_marginEnd="@dimen/_8ssp"
+                    app:layout_constraintEnd_toStartOf="@id/id_text_edit"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <View
+            android:id="@+id/id_view_dot_2"
+            android:layout_width="@dimen/_16ssp"
+            android:layout_height="@dimen/_16ssp"
+            android:background="@drawable/drf_black_dot"
+            android:backgroundTint="@color/color_blue_600"
+            android:layout_marginStart="@dimen/_10ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/id_card_container" />
+
+        <View
+            android:layout_width="@dimen/_2ssp"
+            android:layout_height="0dp"
+            android:background="@color/color_blue_600"
+            app:layout_constraintStart_toStartOf="@id/id_view_dot_1"
+            app:layout_constraintEnd_toEndOf="@id/id_view_dot_1"
+            app:layout_constraintTop_toBottomOf="@id/id_view_dot_1"
+            app:layout_constraintBottom_toTopOf="@id/id_view_dot_2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

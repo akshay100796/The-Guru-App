@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/id_card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6ssp"
+        android:layout_marginTop="@dimen/_6ssp"
+        android:layout_marginEnd="@dimen/_6ssp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_16ssp"
+        app:strokeColor="@color/color_blue_600"
+        app:strokeWidth="@dimen/_2ssp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_8ssp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_center_name"
+                style="@style/style_text_10"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/_6ssp"
+                android:text="Nashik Center Name"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toStartOf="@id/id_label_total_members"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_label_admin"
+                style="@style/style_text_10"
+                android:text="@string/admin"
+                android:layout_marginTop="@dimen/_8ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_text_center_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_admin_name"
+                style="@style/style_text_10"
+                android:text="Admin Name"
+                android:fontFamily="@font/font_cinzel_800"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_label_admin" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/id_text_admin_name">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/style_text_10"
+                    android:text="@string/occur_every" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_day"
+                    style="@style/style_text_10"
+                    android:layout_marginStart="@dimen/_6ssp"
+                    android:fontFamily="@font/font_cinzel_800"
+                    android:text="@string/saturday" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_time"
+                    style="@style/style_text_10"
+                    android:text="05:45 PM"
+                    android:layout_marginStart="@dimen/_6ssp"
+                    android:fontFamily="@font/font_cinzel_800" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_member_count"
+                style="@style/style_text_10"
+                android:textSize="@dimen/_30ssp"
+                android:text="0"
+                android:layout_marginEnd="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_label_total_members"
+                style="@style/style_text_10"
+                android:textSize="@dimen/_12ssp"
+                android:text="Total\nMembers"
+                android:gravity="end"
+                android:layout_marginTop="@dimen/_4ssp"
+                android:layout_marginEnd="@dimen/_4ssp"
+                app:layout_constraintBottom_toBottomOf="@id/id_text_member_count"
+                app:layout_constraintTop_toTopOf="@id/id_text_member_count"
+                app:layout_constraintEnd_toStartOf="@id/id_text_member_count" />
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/_30ssp"
+                android:layout_height="@dimen/_30ssp"
+                app:cardElevation="0dp"
+
+                app:cardBackgroundColor="@color/color_yellow_400"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:rotation="45"
+                    android:layout_margin="@dimen/_6ssp"
+                    android:tint="@color/color_blue_600"
+                    app:srcCompat="@drawable/ic_black_outline_navigation_up_circle" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

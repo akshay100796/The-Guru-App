@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.create_event.CreateEventActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/id_text_title"
+        style="@style/style_text_10"
+        android:text="@string/let_s_create_event"
+        android:layout_margin="@dimen/_10ssp"
+        android:fontFamily="@font/font_prata"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/id_button_next"
+        app:layout_constraintBottom_toBottomOf="@id/id_button_next"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/id_button_next"
+        style="@style/wrap_wrap"
+        android:text="@string/next"
+        app:backgroundTint="@color/black"
+        android:layout_margin="@dimen/_8ssp"
+        android:fontFamily="@font/font_cinzel_400"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_button_next">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_3ssp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/style_text_10"
+                    android:text="@string/date"
+                    android:fontFamily="@font/font_prata"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_date"
+                    android:layout_width="match_parent"
+                    style="@style/style_text_10"
+                    android:text="DD-MM-YYYY"
+                    android:background="@drawable/drf_edit_input_back"
+                    android:padding="@dimen/_10ssp"
+                    android:fontFamily="@font/font_cinzel_800"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_3ssp"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/style_text_10"
+                    android:text="@string/time"
+                    android:fontFamily="@font/font_prata"
+                    android:textSize="@dimen/_12ssp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_time"
+                    style="@style/style_text_10"
+                    android:layout_width="match_parent"
+                    android:text="HH:MM:SS"
+                    android:background="@drawable/drf_edit_input_back"
+                    android:padding="@dimen/_10ssp"
+                    android:fontFamily="@font/font_cinzel_800"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/style_text_10"
+            android:text="Event Address"
+            android:fontFamily="@font/font_prata"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_6ssp"
+            android:textSize="@dimen/_12ssp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_marginEnd="@dimen/_10ssp"
+            android:background="@drawable/drf_edit_input_back">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_text_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/style_text_8"
+                android:text="Click Here or Icon to share Event Location"
+                android:layout_weight="1"
+                android:gravity="center|start"
+                android:paddingStart="@dimen/_10ssp"
+                android:fontFamily="@font/font_cinzel_400" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/id_image_location"
+                android:layout_width="@dimen/_24ssp"
+                android:layout_height="@dimen/_24ssp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_6ssp"
+                app:srcCompat="@drawable/ic_black_outline_location_circle" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_latLong"
+            style="@style/style_text_8"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_10ssp"
+            android:text="Lat:0.0, Long: 0.0"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/id_button_add_schedule"
+            style="@style/wrap_wrap"
+            android:text="@string/add_schedule"
+            android:fontFamily="@font/font_cinzel_400"
+            android:layout_marginStart="@dimen/_10ssp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_recycler_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_recycler_schedules" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
