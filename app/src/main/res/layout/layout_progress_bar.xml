@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ProgressBar xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/_54ssp"
-    android:layout_height="@dimen/_54ssp"
-    android:layout_gravity="center"
-    android:indeterminateDrawable="@drawable/drf_custom_progress_bar" />
