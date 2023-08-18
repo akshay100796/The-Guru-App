@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp"
+        android:layout_marginStart="@dimen/_6ssp"
+        android:layout_marginEnd="@dimen/_6ssp"
+        android:layout_marginTop="@dimen/_6ssp"
+        app:cardCornerRadius="@dimen/_14ssp"
+        app:strokeWidth="@dimen/_1ssp"
+        app:strokeColor="@color/black">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10ssp"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_name"
+                style="@style/style_text_10"
+                android:text="Member Full Name"
+                android:fontFamily="@font/font_cinzel_600" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_email"
+                style="@style/style_text_10"
+                android:autoLink="email"
+                android:textColorLink="@color/black"
+                android:layout_marginTop="@dimen/_4ssp"
+                android:text="example@gmail.com" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_phone"
+                style="@style/style_text_10"
+                android:textSize="@dimen/_12ssp"
+                android:text="+919988776655"
+                android:autoLink="phone"
+                android:textColorLink="@color/black"
+                android:layout_marginTop="@dimen/_4ssp"
+                android:fontFamily="@font/font_cinzel_800" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/id_text_member_type"
+            style="@style/style_text_10"
+            android:text="Member"
+            android:background="@drawable/drf_black_background"
+            android:textColor="@color/white"
+            android:paddingStart="@dimen/_20ssp"
+            android:paddingEnd="@dimen/_20ssp"
+            android:paddingTop="@dimen/_4ssp"
+            android:paddingBottom="@dimen/_4ssp"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/_4ssp" />
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

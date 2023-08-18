@@ -1,6 +1,12 @@
 package com.codexdroid.theguru.controllers.data_models.local
 
+import com.codexdroid.theguru.utility.getDate
+import com.codexdroid.theguru.utility.requestCompleteDateTime
+
 data class Events(val time: Long, val place: String) {
+
+    fun requestDateTime() : String = requestCompleteDateTime(time)
+
     fun requestTime(eventTime:Long = time): String  {
         val seconds = time / 1000
         val minutes = seconds / 60

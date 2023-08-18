@@ -1,5 +1,7 @@
 package com.codexdroid.theguru.ui.fragments.past_events
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 /**
@@ -12,4 +14,12 @@ import androidx.lifecycle.ViewModel
  */
 
 class PastEventsViewModel : ViewModel() {
+
+    private var _updateUi = MutableLiveData<String>()
+    val updateUi : LiveData<String> = _updateUi
+
+    fun requestUpdateUi(type: String) {
+        _updateUi.postValue(type)
+    }
+
 }

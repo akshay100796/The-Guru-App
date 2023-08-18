@@ -75,4 +75,11 @@
     <string name="global">Global</string>
     <string name="occur_every">Occur Every</string>
     <string name="saturday">Saturday</string>
+    <string name="view_members"><u>View Members</u></string>
+    <string name="total_members">Total\nMembers</string>
+    <string name="add_member">Add Member</string>
+    <string name="latitude_longitude">Latitude:%f, Longitude: %f</string>
+    <string name="create_member">Create Member</string>
+    <string name="event_held_on">Event Held on</string>
+    <string name="ago">%s Ago</string>
 </resources>

@@ -8,6 +8,7 @@
     <color name="color_blue_600">#2F288F</color>
     <color name="color_gray_200">#F5F5F5</color>
     <color name="color_gray_300">#F1F1F1</color>
+    <color name="color_gray_500">#E8E8E8</color>
 
     <color name="color_error_red">#FF0000</color>
     <color name="transparent">#00000000</color>

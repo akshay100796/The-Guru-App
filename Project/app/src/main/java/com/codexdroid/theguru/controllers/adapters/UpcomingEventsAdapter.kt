@@ -4,14 +4,19 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.CountDownTimer
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.codexdroid.theguru.R
 import com.codexdroid.theguru.controllers.data_models.local.Events
 import com.codexdroid.theguru.controllers.interfaces.RecyclerItemClickListener
 import com.codexdroid.theguru.databinding.LayoutRecyclerSatsangasBinding
 
 class UpcomingEventsAdapter(private val context: Context)
     : RecyclerView.Adapter<UpcomingEventsAdapter.UpcomingViewHolder>() {
+
+    private val gray300 by lazy { context.resources.getColor(R.color.color_gray_300,null) }
+    private val gray500 by lazy { context.resources.getColor(R.color.color_gray_500,null) }
 
     private val events by lazy { mutableListOf<Events>() }
     private lateinit var timer: CountDownTimer
@@ -38,15 +43,18 @@ class UpcomingEventsAdapter(private val context: Context)
             val event = events[position]
             this.idLocation.text = event.place
 
-            timer = object : CountDownTimer(event.time,1000) {
-                override fun onTick(millisUntilFinished: Long) {
-                    val timeLeft = event.time - System.currentTimeMillis()
+            val diff = event.time - System.currentTimeMillis()
+            if(diff > 0) {
+                //Upcoming Event
+                this.idEventHeldIn.text = context.getString(R.string.upcoming_event_in)
+                idTextCountdownTimer.text = event.requestDateTime()
+            } else {
+                //Past Event
+                idLinearContainer.setBackgroundColor(gray300)
+                this.idEventHeldIn.text = context.getString(R.string.event_held_on)
+                idTextCountdownTimer.text = context.getString(R.string.ago, event.requestDateTime())
 
-                     idTextCountdownTimer.text = event.requestTime(timeLeft)
-                }
-                override fun onFinish() {}
             }
-            timer.start()
 
             this.idCardEvent.setOnClickListener {
                 recyclerItemClickListener.onRecyclerItemClicked(position, event)

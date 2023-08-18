@@ -21,6 +21,9 @@
         android:theme="@style/Theme.TheGuru"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.members.CenterMembersActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.create_event.CreateEventActivity"
             android:exported="false" />
         <activity
@@ -38,18 +41,15 @@
         <activity
             android:name=".ui.activities.home.HomeActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustPan" />
-
-        <!--        android:theme="@style/style_splash"-->
+            android:windowSoftInputMode="adjustPan" /> <!-- android:theme="@style/style_splash" -->
         <activity
             android:name=".ui.activities.splash.SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 

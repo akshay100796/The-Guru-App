@@ -3,9 +3,9 @@
 
     <item android:drawable="@drawable/ic_black_outline_circle" />
     <item android:drawable="@drawable/ic_black_outline_edit"
-        android:start="@dimen/_10ssp"
-        android:top="@dimen/_10ssp"
-        android:end="@dimen/_10ssp"
-        android:bottom="@dimen/_10ssp"
+        android:start="@dimen/_20ssp"
+        android:top="@dimen/_20ssp"
+        android:end="@dimen/_20ssp"
+        android:bottom="@dimen/_20ssp"
         />
 </layer-list>

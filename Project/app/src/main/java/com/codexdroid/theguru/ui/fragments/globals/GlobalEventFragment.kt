@@ -93,7 +93,7 @@ class GlobalEventFragment : BaseFragment<FragmentGlobalBinding, GlobalViewModel>
 
     private fun requestShowEvents() {
 
-        val next2Days  = 1691605800000
+        val next2Days  = 1696876200000
         val events = mutableListOf<Events>().apply {
             add(Events(next2Days,"Om Hall, Nashik, 422101"))
             add(Events(next2Days,"Shanti Hall, Nashik, 422101"))

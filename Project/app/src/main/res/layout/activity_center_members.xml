@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activities.members.CenterMembersActivity">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/id_button_add_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_member"
+            android:layout_gravity="end"
+            android:layout_margin="@dimen/_6ssp"
+            android:fontFamily="@font/font_cinzel_600"
+            android:backgroundTint="@color/black" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_recycler_members"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/layout_recycler_members"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

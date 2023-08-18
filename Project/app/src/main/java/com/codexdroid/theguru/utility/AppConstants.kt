@@ -14,7 +14,7 @@ object AppConstants {
     object DateFormats {
         const val DD_MM_YYYY = "dd-MM-yyyy"
         const val DD_MMMM_YYYY = "dd MMMM yyyy"
-        const val DD_MM_YYYY_HH_MM_A = "dd-MMM-yy hh:mm a"
+        const val DD_MM_YYYY_HH_MM_A = "dd-MMM-YYYY hh:mm a"
         const val HH_MM_SS = "hh:mm:ss"
         const val YYYY = "yyyy"
         const val MM = "MM"
@@ -30,6 +30,11 @@ object AppConstants {
     object LINKS {
         const val BASE_GIT_URL = "https://raw.githubusercontent.com/"
         const val LEARNINGS = "https://raw.githubusercontent.com/akshay100796/The-Guru-App-Notes/main/text/learnings.json"
+    }
+
+    object NUMBERS {
+        const val LATITUDE = 19.845532566932274
+        const val LONGITUDE = 73.98880727647996
     }
 
 
@@ -70,9 +75,10 @@ object AppConstants {
 
     object SHEET {
         const val CREATE_EVENT = "sheet_events"
-        const val UPDATE_SEVA = "update_seva"
-        const val CREATE_SEVA = "create_seva"
+        const val UPDATE_SEVA = "sheet_update_seva"
+        const val CREATE_SEVA = "sheet_create_seva"
         const val MAP = "map"
+        const val CREATE_MEMBER = "sheet_create_member"
     }
 
     object RecyclerView {

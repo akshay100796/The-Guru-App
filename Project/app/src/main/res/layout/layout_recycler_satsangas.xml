@@ -14,12 +14,14 @@
         app:cardCornerRadius="@dimen/_20ssp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/id_linear_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/drf_gradient_yellow"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/id_event_held_in"
                 style="@style/style_text_10"
                 android:layout_margin="@dimen/_10ssp"
                 android:text="@string/upcoming_satsangs_in"
@@ -29,10 +31,11 @@
                 android:id="@+id/id_text_countdown_timer"
                 style="@style/style_text_10"
                 android:textSize="@dimen/_20ssp"
-                android:text="08:45:47 SEC"
+                android:text="08:45:47"
                 android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_10ssp"
                 android:textColor="@color/color_blue_600"
-                android:fontFamily="@font/font_cinzel_800" />
+                android:fontFamily="@font/font_prata" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/id_location"
@@ -42,7 +45,8 @@
                 android:drawableStart="@drawable/ic_black_outline_move_location_24_dp"
                 android:drawablePadding="@dimen/_3ssp"
                 android:drawableTint="@color/color_blue_600"
-                android:layout_margin="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:layout_marginBottom="@dimen/_10ssp"
                 android:textColor="@color/color_blue_600" />
 
 

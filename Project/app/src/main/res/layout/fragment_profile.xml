@@ -41,7 +41,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/font_cinzel_400"
             android:textSize="@dimen/_24ssp"
-            android:layout_marginTop="@dimen/_30ssp"
+            android:layout_marginTop="@dimen/_10ssp"
             />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -106,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10ssp"
-            android:layout_marginTop="@dimen/_40ssp">
+            android:layout_marginTop="@dimen/_20ssp">
 
             <androidx.appcompat.widget.AppCompatTextView
                 style="@style/style_text_10"
@@ -133,7 +133,6 @@
             android:textStyle="bold"
             android:textSize="@dimen/_14ssp"
             android:layout_marginStart="@dimen/_10ssp" />
-
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
@@ -167,7 +166,6 @@
             android:textSize="@dimen/_14ssp"
             android:layout_marginStart="@dimen/_10ssp" />
 
-
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -199,7 +197,142 @@
             android:textSize="@dimen/_14ssp"
             android:layout_marginStart="@dimen/_10ssp" />
 
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="0dp"
+            android:layout_margin="@dimen/_6ssp"
+            app:cardCornerRadius="@dimen/_20ssp"
+            app:strokeWidth="@dimen/_1ssp"
+            app:strokeColor="@color/black">
 
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_8ssp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/id_text_center_name"
+                        style="@style/style_text_10"
+                        android:text="Nashik Center Name"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/id_text_address"
+                        style="@style/style_text_10"
+                        android:layout_marginTop="@dimen/_6ssp"
+                        android:text="Near Ichchamani Ganesh Temple, Red House, Shivaji Nagar Sinnar" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/id_text_lat_long"
+                        style="@style/style_text_8"
+                        android:text="Latitude: 71.02145214254, Longitude: 19.142264888"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/id_text_address" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/id_occur_day_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_6ssp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/style_text_10"
+                            android:text="@string/occur_every" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/id_text_day"
+                            style="@style/style_text_10"
+                            android:layout_marginStart="@dimen/_6ssp"
+                            android:fontFamily="@font/font_cinzel_800"
+                            android:text="@string/saturday" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/id_text_time"
+                            style="@style/style_text_10"
+                            android:layout_marginStart="@dimen/_6ssp"
+                            android:fontFamily="@font/font_cinzel_800"
+                            android:text="05:45 PM" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/id_label_admin"
+                        style="@style/style_text_10"
+                        android:layout_marginTop="@dimen/_6ssp"
+                        android:text="@string/admin" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/id_text_admin_name"
+                        style="@style/style_text_10"
+                        android:fontFamily="@font/font_cinzel_800"
+                        android:text="Admin Name" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/id_text_view_members"
+                        style="@style/style_text_8"
+                        android:layout_marginTop="@dimen/_6ssp"
+                        android:text="@string/view_members"
+                        android:textSize="@dimen/_12ssp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_text_member_count"
+                    style="@style/style_text_10"
+                    android:text="0"
+                    android:textSize="@dimen/_30ssp"
+                    android:layout_marginEnd="@dimen/_6ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/id_image_navToMap_container" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/id_label_total_members"
+                    style="@style/style_text_10"
+                    android:gravity="end"
+                    android:text="@string/total_members"
+                    android:layout_marginEnd="@dimen/_4ssp"
+                    app:layout_constraintEnd_toStartOf="@id/id_text_member_count"
+                    app:layout_constraintTop_toTopOf="@id/id_text_member_count"
+                    app:layout_constraintBottom_toBottomOf="@id/id_text_member_count" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/id_image_navToMap_container"
+                    android:layout_width="@dimen/_30ssp"
+                    android:layout_height="@dimen/_30ssp"
+                    app:cardBackgroundColor="@color/color_yellow_400"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp"
+                    app:cardCornerRadius="@dimen/_40ssp"
+                    android:layout_margin="@dimen/_6ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_6ssp"
+                        android:rotation="45"
+                        android:tint="@color/color_blue_600"
+                        app:srcCompat="@drawable/ic_black_outline_navigation_up_circle" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
